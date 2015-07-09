@@ -1,0 +1,198 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="20dp"
+    android:paddingBottom="15dp"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/teamLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="45dp"
+        android:text="Team #"
+        android:textSize="30sp" />
+
+    <org.citruscircuits.scout.TraceImageView
+        android:id="@+id/traceImageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/teamLabel"
+        android:adjustViewBounds="true"
+        android:paddingBottom="0dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="5dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/field2014x32" />
+
+    <Button
+        android:id="@+id/nextStateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:onClick="nextState"
+        android:text="Start Match" />
+
+    <Button
+        android:id="@+id/flipFieldButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:onClick="flipField"
+        android:text="Flip Field" />
+
+    <Button
+        android:id="@+id/autoGoneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/nextStateButton"
+        android:onClick="autoBallsGone"
+        android:text="Auto Balls Gone" />
+    <Button
+        android:id="@+id/manualOverrideButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/autoGoneButton"
+        android:layout_marginLeft="5dp"
+        android:onClick="manualOverride"
+        android:text="Toggle Eject/Receive" />
+
+    <TextView
+        android:id="@+id/timerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="18dp"
+        android:text="0:00"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/makesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/timerText"
+        android:text="Makes"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/missesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/timerText"
+        android:layout_alignLeft="@+id/makesTextView"
+        android:layout_marginLeft="100dp"
+        android:text="Misses" 
+        android:textSize="20sp"/>
+    
+    <TextView
+        android:id="@+id/blocksTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/timerText"
+        android:layout_alignLeft="@+id/missesTextView"
+        android:layout_marginLeft="100dp"
+        android:text="Blocks" 
+        android:textSize="20sp"/>
+    
+     <TextView
+        android:id="@+id/ejectsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/timerText"
+        android:layout_alignRight="@+id/receivesTextView"
+        android:layout_marginRight="110dp"
+        android:text="Ejects" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/receivesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/timerText"
+        android:layout_alignRight="@+id/receiveFailsTextView"
+        android:layout_marginRight="110dp"
+        android:text="Receives" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/receiveFailsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/timerText"
+        android:text="Rec. Fails" 
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/makesCounterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/makesTextView"
+        android:text="0"
+        android:textSize="40sp" />
+    
+    <TextView
+        android:id="@+id/missesCounterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/missesTextView"
+        android:text="0"
+        android:textSize="40sp" />
+    
+    <TextView
+        android:id="@+id/blocksCounterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/blocksTextView"
+        android:text="0"
+        android:textSize="40sp" />
+    
+    <TextView
+        android:id="@+id/ejectsCounterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/ejectsTextView"
+        android:text="0"
+        android:textSize="40sp" />
+    
+    <TextView
+        android:id="@+id/receivesCounterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/receivesTextView"
+        android:text="0"
+        android:textSize="40sp" />
+    
+    <TextView
+        android:id="@+id/receiveFailsCounterTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/receiveFailsTextView"
+        android:text="0"
+        android:textSize="40sp" />
+
+    <Button
+        android:id="@+id/undobutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:onClick="undoClicked"
+        android:layout_alignRight="@+id/receivesTextView"
+        android:text="Undo" />
+
+</RelativeLayout>

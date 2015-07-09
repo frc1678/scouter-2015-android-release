@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:id="@+id/teamLabelAuto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="45sp"
+        android:text="1678" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/teamLabelAuto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/oneSButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1 Recon From Middle"/>
+
+            <Button
+                android:id="@+id/oneMButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="1 Recon From Side"/>
+
+            <Button
+                android:id="@+id/twoSButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2 Recons From Middle"/>
+
+            <Button
+                android:id="@+id/twoMButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="2 Recons From Side"/>
+
+            <Button
+                android:id="@+id/threeButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="3 Recons"/>
+
+            <Button
+                android:id="@+id/fourButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="4 Recons"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Recons Fail"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/reconFailText"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-"
+                    android:tag="3-"
+                    android:id="@+id/reconFailMinusButton"
+                    android:layout_toLeftOf="@+id/reconFailNum"
+                    android:onClick="reconFailedClick"/>
+
+                <TextView
+                    android:layout_width="32dp"
+                    android:layout_height="40dp"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:layout_toLeftOf="@+id/reconFailPlusButton"
+                    android:id="@+id/reconFailNum"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+"
+                    android:layout_alignParentRight="true"
+                    android:tag="3+"
+                    android:onClick="reconFailedClick"
+                    android:id="@+id/reconFailPlusButton"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_weight="2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:orientation="horizontal"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/numReconsIntoAuto"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Num Recons Into Auto"
+                        android:gravity="center_horizontal"/>
+
+                    <Button
+                        android:id="@+id/numNoodlesMinus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:onClick="reconsAutoMinus"/>
+
+                    <TextView
+                        android:id="@+id/reconsIntoAuto"
+                        android:layout_height="wrap_content"
+                        android:layout_width="60dp"
+                        android:gravity="center_horizontal"
+                        android:text="0"/>
+
+                    <Button
+                        android:id="@+id/numNoodlesPlus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+"
+                        android:onClick="reconsAutoPlus"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ToggleButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOn="Made stacked tote set"
+                android:textOff="Did not make stacked tote set"
+                android:id="@+id/stackedToteSetInAuto"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
